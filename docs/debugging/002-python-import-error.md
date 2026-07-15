@@ -1,20 +1,53 @@
-# Problem
+# Debugging Report 001
 
-Import error while testing constants.
+## Date
 
-## Error
+2026-07-15
+
+## Module
+
+config/constants.py
+
+## Problem
 
 ModuleNotFoundError: No module named 'config'
 
+## Symptoms
+
+Python could not import the config package.
+
 ## Root Cause
 
-Python could not locate the project package.
+The test was executed directly using:
 
-## Fix
+python tests/test_constants.py
 
-Adjusted the project structure or Python path.
+This caused Python to use the tests directory as the module search path.
+
+## Solution
+
+Run tests using:
+
+python -m pytest tests/
+
+instead of:
+
+python tests/test_constants.py
 
 ## Lessons Learned
 
-Understand how Python resolves imports in a package-based project.
+- Never execute test files directly in package-based projects.
+- Always use pytest.
+- Understand Python module search paths.
+
+## Prevention
+
+Use pytest consistently for all future tests.
+
+## Status
+
+Resolved ✅
+
+
+
 
