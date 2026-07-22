@@ -50,4 +50,16 @@ All notable changes to this project will be documented in this file.
 
 
 
+# Changelog
 
+## v0.2.0
+
+### Added
+
+- Enterprise project structure
+- Runtime configuration module (settings.py)
+- Application constants module (constants.py)
+- Unit tests for configuration
+- Virtual environment setup
+- GitHub SSH configuration
+- WSL2 Ubuntu development environment
