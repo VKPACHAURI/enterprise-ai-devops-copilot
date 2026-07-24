@@ -54,3 +54,8 @@ class ConfigurationError(DevOpsCopilotError):
     pass
 
 
+class FileOperationError(DevOpsCopilotError):
+    """
+    Raised when a file or directory operation fails.
+    """
+    pass
