@@ -282,3 +282,218 @@ The next phase will build a reusable document loading system capable of reading 
 * File Utility Framework
 
 This marks the beginning of the document ingestion pipeline for the Enterprise AI DevOps Copilot.
+
+# Phase 5 – Enterprise Document Loader Framework
+
+**Status:** ✅ Completed
+
+**Completion Date:** July 2026
+
+---
+
+## Objective
+
+Develop an enterprise-grade Document Loader responsible for validating,
+discovering, and loading supported documents for the Enterprise AI DevOps
+Copilot.
+
+This framework serves as the entry point of the Retrieval-Augmented Generation
+(RAG) pipeline.
+
+---
+
+## Work Completed
+
+### Document Loader
+
+- Created `DocumentLoader` class.
+- Centralized all document loading logic.
+- Implemented reusable architecture.
+
+---
+
+### Directory Validation
+
+Implemented validation for:
+
+- Directory existence.
+- Valid directory path.
+- Supported document availability.
+
+---
+
+### Supported File Discovery
+
+Implemented automatic discovery of supported documents.
+
+Current supported file types:
+
+- PDF (`.pdf`)
+
+Unsupported files are automatically ignored.
+
+---
+
+### PDF Loading
+
+Integrated LangChain `PyPDFLoader`.
+
+Implemented:
+
+- Individual document loading.
+- Loading multiple PDF files.
+- Conversion to LangChain Document objects.
+
+---
+
+### Enterprise Logging
+
+Integrated enterprise logging.
+
+Added logs for:
+
+- Document loading started.
+- Individual document loading.
+- Successful completion.
+- Validation failures.
+- Loading failures.
+
+---
+
+### Enterprise Exception Handling
+
+Implemented:
+
+- `DocumentLoadError`
+- Exception chaining
+- Structured error reporting
+
+---
+
+### Unit Testing
+
+Created comprehensive unit tests.
+
+Implemented test cases for:
+
+- DocumentLoader initialization
+- Directory does not exist
+- Invalid directory path
+- Unsupported document types
+- Successful PDF loading
+- PDF loading failure
+
+**Result:**
+
+**6 / 6 Unit Tests Passed**
+
+---
+
+## Enterprise Design Principles Applied
+
+- Single Responsibility Principle (SRP)
+- Loose Coupling
+- Reusability
+- Scalability
+- Maintainability
+- Structured Logging
+- Centralized Exception Handling
+
+---
+
+## Architecture
+
+```
+Application
+      │
+      ▼
+DocumentLoader
+      │
+      ▼
+Validate Directory
+      │
+      ▼
+Discover Supported Files
+      │
+      ▼
+PyPDFLoader
+      │
+      ▼
+LangChain Documents
+```
+
+---
+
+## Problems Solved
+
+Before this phase:
+
+- No centralized document loading.
+- Duplicate loading logic.
+- No validation.
+- Generic exception handling.
+- Difficult to extend.
+
+After this phase:
+
+- Centralized document loading.
+- Enterprise validation.
+- Structured logging.
+- Custom exception handling.
+- Reusable architecture.
+- Production-ready implementation.
+
+---
+
+## Files Created
+
+```
+app/document_loader.py
+
+tests/test_document_loader.py
+```
+
+---
+
+## Files Updated
+
+```
+README.md
+
+requirements.txt
+```
+
+(Add any additional files you updated.)
+
+---
+
+## Skills Learned
+
+- LangChain Document Loader
+- PyPDFLoader
+- Pathlib
+- File filtering
+- Enterprise validation
+- Structured logging
+- Custom exceptions
+- Unit testing
+- pytest
+- monkeypatch
+- tmp_path
+
+---
+
+## Phase Outcome
+
+✔ Enterprise Document Loader Framework completed
+
+✔ PDF document loading implemented
+
+✔ Enterprise logging integrated
+
+✔ Enterprise exception handling integrated
+
+✔ 6 / 6 Unit Tests Passed
+
+✔ Ready for Phase 6 – Enterprise Text Splitter Framework
+
