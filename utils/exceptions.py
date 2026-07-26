@@ -59,3 +59,9 @@ class FileOperationError(DevOpsCopilotError):
     Raised when a file or directory operation fails.
     """
     pass
+
+class TextSplitterError(Exception):
+    """
+    Raised when text splitting fails.
+    """
+    pass
