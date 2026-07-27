@@ -1,0 +1,67 @@
+Section 1: Embeddings Fundamentals
+What are embeddings?
+Why do we need embeddings?
+Dense vs. Sparse embeddings
+Embedding dimensions (e.g., 384 dimensions)
+Why similar text has similar vectors
+Section 2: Ollama Embeddings
+What is OllamaEmbeddings?
+Why did we choose Ollama?
+How local embedding generation works
+Advantages of running embeddings locally
+Section 3: LangChain Integration
+Role of Document
+Why page_content is used
+Difference between Document and plain text
+embed_documents() vs. embed_query()
+Section 4: Enterprise Design Decisions
+Why create an EmbeddingEngine class?
+Why separate configuration, logging, and exceptions?
+Why validate input before embedding?
+Why use custom exceptions?
+Why use dependency injection (mocking) in tests?
+Section 5: Unit Testing
+Why use MagicMock?
+Why use monkeypatch?
+Why avoid loading the real Ollama model during unit tests?
+Positive vs. negative test cases
+Section 6: Project Flow
+PDF
+   ↓
+Loader
+   ↓
+Splitter
+   ↓
+Document Objects
+   ↓
+Embedding Engine
+   ↓
+Dense Vectors (384 Dimensions)
+   ↓
+ChromaDB (Phase 8)
+Section 7: Interview Questions
+
+We should add around 25–30 interview questions, for example:
+
+What are embeddings?
+What is the difference between embeddings and LLMs?
+Why do we use embeddings in RAG?
+Why did you choose Ollama instead of OpenAI?
+What is the dimension of your embedding model?
+What is embed_documents()?
+What is embed_query()?
+Why is input validation important?
+Why did you use custom exceptions?
+Why did you mock the embedding model in tests?
+What happens if Ollama is unavailable?
+How are embeddings stored?
+Why can't we perform semantic search without embeddings?
+What is cosine similarity?
+What happens after embedding generation?
+Section 8: Resume Talking Points
+
+Include concise answers to questions such as:
+
+"Explain your Embedding Engine."
+
+"I developed an enterprise-grade Embedding Engine using LangChain and Ollama. The module validates input documents, extracts textual content from LangChain Document objects, generates dense vector embeddings using a locally hosted embedding model, logs all operations, handles failures with custom exceptions, and is fully covered by unit tests using mocked dependencies."
